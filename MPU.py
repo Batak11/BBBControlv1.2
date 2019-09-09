@@ -15,7 +15,6 @@ def i2cdetect():
     print(error)
 
 
-
 class MultiPlexer(object):
     def __init__(self, address=0x70):
         self.i2c = Adafruit_I2C.get_i2c_device(address, busnum=2)
@@ -38,7 +37,6 @@ class MPU_9150(object):
         # Power on of Acc
         self.i2c.write8(power_mgmt_1, 0x00)
 
-
     def _read_word(self, reg):
         sens_bytes = self.i2c.readList(register=reg, length=2)
         msb = sens_bytes[0]
@@ -46,14 +44,12 @@ class MPU_9150(object):
         value = (msb << 8) + lsb
         return value
 
-
     def _read_word_2c(self, reg):
         val = self._read_word(reg)
         if (val >= 0x8000):
             return -((65535 - val) + 1)
         else:
             return val
-
 
     def get_acceleration(self):
         self.plexer.select(self.mplx_id)
@@ -64,12 +60,13 @@ class MPU_9150(object):
         return (acc_xout, acc_yout, acc_zout)
 
 
-
-
 if __name__ == "__main__":
-    IMU = MPU_9150(0,1)
+    IMU = MPU_9150(0, 1)
     while True:
-        x, y, z = IMU.get_acceleration()
+        try:
+            x, y, z = IMU.get_acceleration()
+        except OSError:
+            pass
         s = 'x_acc: {}\n'.format(x)
         s = s + 'y_acc: {}\n'.format(y)
         s = s + 'z_acc: {}\n'.format(z)
