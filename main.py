@@ -13,4 +13,4 @@ IMU_static = MPU.MPU_9150(0, 0)
 x_static, y_static, z_static = IMU_static.get_acceleration()
 vec_static = IMU_static.get_acceleration()
 
-current_angle = IMU_calc.calc_angle(IMU_dynamic, IMU_static)
+current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
