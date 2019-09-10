@@ -25,8 +25,11 @@
 # python_version  :2.7
 # ==============================================================================
 
-# Ivmech PID Controller is simple implementation of a Proportional-Integral-Derivative (PID) Controller in the Python Programming Language.
-# More information about PID Controller: http://en.wikipedia.org/wiki/PID_controller
+# Ivmech PID Controller is simple implementation of a
+# Proportional-Integral-Derivative (PID) Controller in the
+# Python Programming Language.
+# More information about PID Controller:
+# http://en.wikipedia.org/wiki/PID_controller
 # """
 import time
 
@@ -97,20 +100,23 @@ class PID:
             self.last_time = self.current_time
             self.last_error = error
 
-            self.output = self.PTerm + (self.Ki * self.ITerm) + (self.Kd * self.DTerm)
+            self.output = self.PTerm+(self.Ki*self.ITerm)+(self.Kd*self.DTerm)
 
         return self.output
 
     def setKp(self, proportional_gain):
-        # """Determines how aggressively the PID reacts to the current error with setting Proportional Gain"""
+        # """Determines how aggressively the PID reacts to
+        # the current error with setting Proportional Gain"""
         self.Kp = proportional_gain
 
     def setKi(self, integral_gain):
-        # """Determines how aggressively the PID reacts to the current error with setting Integral Gain"""
+        # """Determines how aggressively the PID reacts to
+        # the current error with setting Integral Gain"""
         self.Ki = integral_gain
 
     def setKd(self, derivative_gain):
-        # """Determines how aggressively the PID reacts to the current error with setting Derivative Gain"""
+        # """Determines how aggressively the PID reacts
+        # to the current error with setting Derivative Gain"""
         self.Kd = derivative_gain
 
     def setWindup(self, windup):
@@ -127,7 +133,8 @@ class PID:
 
     def setSampleTime(self, sample_time):
         # """PID that should be updated at a regular interval.
-        # Based on a pre-determined sampe time, the PID decides if it should compute or return immediately.
+        # Based on a pre-determined sampe time,
+        # the PID decides if it should compute or return immediately.
         # """
         self.sample_time = sample_time
 
