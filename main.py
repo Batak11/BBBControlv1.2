@@ -14,3 +14,4 @@ x_static, y_static, z_static = IMU_static.get_acceleration()
 vec_static = IMU_static.get_acceleration()
 
 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
+print (current_angle)
