@@ -6,6 +6,7 @@ import IMU_calc
 import reference_angle 
 
 for i in range(0, 100):
+    ref_angle = reference_angle.reference_angle()
     IMU_dynamic = MPU.MPU_9150(0, 1)
     x_dynamic, y_dynamic, z_dynamic = IMU_dynamic.get_acceleration()
     vec_dynamic = IMU_dynamic.get_acceleration()
@@ -14,6 +15,5 @@ for i in range(0, 100):
     vec_static = IMU_static.get_acceleration()
     current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
     print(current_angle)
-    ref_angle = reference_angle.reference_angle()
     error = ref_angle-current_angle
     print(error)
