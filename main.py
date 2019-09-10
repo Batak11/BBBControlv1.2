@@ -15,4 +15,4 @@ vec_static = IMU_static.get_acceleration()
 
 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
 print(current_angle)
-ref_angle = reference_angle.ref_angle()
+ref_angle = reference_angle.reference_angle()
