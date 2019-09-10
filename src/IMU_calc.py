@@ -27,4 +27,4 @@ def normalize(vec):
 
 def rotate(vec, theta):
     c, s = np.cos(theta), np.sin(theta)
-    return (c*vec.values[0]-s*vec.values[1], s*vec.values[0]+c*vec.values[1], vec.values[2])
+    return (c*vec[0]-s*vec[1], s*vec[0]+c*vec[1], vec[2])
