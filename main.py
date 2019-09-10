@@ -6,6 +6,7 @@ import IMU_calc
 import MPU
 
 IMU_dynamic = MPU.MPU_9150(0, 1)
+print(IMU_dynamic)
 x_dynamic, y_dynamic, z_dynamic = IMU_dynamic.get_acceleration()
 vec_dynamic = IMU_dynamic.get_acceleration()
 
