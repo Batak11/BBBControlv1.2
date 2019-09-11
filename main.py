@@ -8,7 +8,6 @@ import math
 import PID_Controller 
 
 PID_object = PID_Controller.PID(0, 0, 0)
-PID_object.sample_time(10)
 myPWM = "P8_13"
 PWM.start(myPWM, 0, 100000)
 
