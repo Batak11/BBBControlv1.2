@@ -36,7 +36,6 @@ for i in range(0, 20):
             PWM.set_duty_cycle(myPWM, mapped_output)
 
     except KeyboardInterrupt:
-        PWM.set_duty_cycle(myPWM, 0)
         pass
 
 PWM.stop(myPWM)
