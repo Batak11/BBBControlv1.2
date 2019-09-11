@@ -37,6 +37,7 @@ for i in range(0, 20):
 
     except KeyboardInterrupt:
         pass
+    quatsch
 
 PWM.stop(myPWM)
 PWM.cleanup()
