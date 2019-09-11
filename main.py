@@ -10,6 +10,8 @@ import PID_Controller
 PID_object = PID_Controller.PID(0, 0, 0)
 myPWM = "P8_13"
 PWM.start(myPWM, 0, 100000)
+IMU_static = MPU.MPU_9150(0, 0)
+IMU_dynamic = MPU.MPU_9150(0, 1)
 
 
 for i in range(0, 20):
@@ -25,9 +27,7 @@ for i in range(0, 20):
     PID_object.setSetPoint(ref_angle)
     try:
         while True:
-            IMU_dynamic = MPU.MPU_9150(0, 1)
             vec_dynamic = IMU_dynamic.get_acceleration()
-            IMU_static = MPU.MPU_9150(0, 0)
             vec_static = IMU_static.get_acceleration()
             current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
             output = PID_object.update(current_angle)
