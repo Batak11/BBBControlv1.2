@@ -4,7 +4,7 @@ import MPU
 import Adafruit_BBIO.PWM as PWM
 sys.path.insert(1, './src')
 import IMU_calc
-import math
+import calc_functions
 import PID_Controller 
 
 PID_object = PID_Controller.PID(0, 0, 0)
@@ -15,16 +15,13 @@ PWM.start(myPWM, 0, 100000)
 for i in range(0, 20):
     print("Do you want to change Gains? if yes press y: ")
     if input() == "y":
-        new_Kp = input()
-        if type(new_Kp) is not float:
-            print('Bitte float')
-        elif new_Kp is float:
-            PID_object.setKp(new_Kp)
-        new_Ki = input()
+        new_Kp = float(input())
+        PID_object.setKp(new_Kp)
+        new_Ki = float(input())
         PID_object.setKi(new_Ki)
-        new_Kd = input()
+        new_Kd = float(input())
         PID_object.setKd(new_Kd)
-    ref_angle = math.reference_angle()
+    ref_angle = calc_functions.reference_angle()
     PID_object.setSetPoint(ref_angle)
     try:
         while True:
@@ -34,8 +31,8 @@ for i in range(0, 20):
             vec_static = IMU_static.get_acceleration()
             current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
             output = PID_object.update(current_angle)
-            cut_output = math.output_cut(output)
-            mapped_output = math.output_mapped(cut_output)
+            cut_output = calc_functions.output_cut(output)
+            mapped_output = calc_functions.output_mapped(cut_output)
             PWM.set_duty_cycle(myPWM, mapped_output)
 
     except KeyboardInterrupt:
