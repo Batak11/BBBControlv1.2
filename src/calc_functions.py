@@ -20,11 +20,11 @@ def reference_angle():
 def output_cut(output):
     if output > 1:
         output = 1
-    elif output < -1:
-        output = -1
+    elif output < 0:
+        output = 0
     return output
 
 
 def output_mapped(output_cut):
-    mapped_output = 50+50*output_cut
+    mapped_output = 100*output_cut
     return mapped_output
