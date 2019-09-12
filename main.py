@@ -30,7 +30,7 @@ for i in range(0, 20):
             vec_dynamic = IMU_dynamic.get_acceleration()
             vec_static = IMU_static.get_acceleration()
             current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
-            PID_object.setSampleTime(100)
+            PID_object.setSampleTime(10)
             output = PID_object.update(current_angle)
             cut_output = calc_functions.output_cut(output)
             mapped_output = calc_functions.output_mapped(cut_output)
