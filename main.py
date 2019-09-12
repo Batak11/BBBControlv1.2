@@ -33,7 +33,7 @@ for i in range(0, 20):
             output = PID_object.update(current_angle)
             cut_output = calc_functions.output_cut(output)
             mapped_output = calc_functions.output_mapped(cut_output)
-            PWM.set_duty_cycle(myPWM, output)
+            PWM.set_duty_cycle(myPWM, mapped_output)
 
     except KeyboardInterrupt:
         pass
