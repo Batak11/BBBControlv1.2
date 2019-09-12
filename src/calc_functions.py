@@ -21,7 +21,7 @@ def output_cut(output):
     if output > 1:
         output = 1
     elif output < -1:
-        output = 0
+        output = -1
     return output
 
 
