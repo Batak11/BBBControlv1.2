@@ -27,6 +27,7 @@ for i in range(0, 10):
     ref_angle = calc_functions.reference_angle()
     PID_object.setSetPoint(ref_angle)
     PID_object.setWindup(20)
+    PID_object.setSampleTime(0.3)
     try:
         while True:
             try:
@@ -37,8 +38,7 @@ for i in range(0, 10):
                 print(current_angle)
                 cut_output = calc_functions.output_cut(output)
                 PWM.set_duty_cycle(myPWM, cut_output)
-                sleep(0.3)
-                
+
             except OSError:
                 pass
 
