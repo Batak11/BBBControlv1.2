@@ -37,6 +37,8 @@ for i in range(0, 10):
                 PWM.set_duty_cycle(myPWM, cut_output)
             except OSError:
                 pass
+            except TimeoutError:
+                pass
 
     except KeyboardInterrupt:
         pass
