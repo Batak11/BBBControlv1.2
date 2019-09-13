@@ -33,8 +33,7 @@ for i in range(0, 10):
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 PID_object.setSampleTime(10)
                 output = PID_object.update(current_angle)
-                print(output)
-                print("/n")
+                print(output/n)
                 cut_output = calc_functions.output_cut(output)
                 PWM.set_duty_cycle(myPWM, cut_output)
             except OSError:
