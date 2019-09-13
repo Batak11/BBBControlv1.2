@@ -32,7 +32,7 @@ for i in range(0, 10):
                 vec_static = IMU_static.get_acceleration()
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID_object.update(current_angle)
-                print(output)
+                print(current_angle)
                 cut_output = calc_functions.output_cut(output)
                 PWM.set_duty_cycle(myPWM, cut_output)
             except OSError:
