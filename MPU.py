@@ -63,10 +63,7 @@ class MPU_9150(object):
 if __name__ == "__main__":
     IMU = MPU_9150(0, 0)
     while True:
-        try:
-            x, y, z = IMU.get_acceleration()
-        except OSError:
-            pass
+        x, y, z = IMU.get_acceleration()
         s = 'x_acc: {}\n'.format(x)
         s = s + 'y_acc: {}\n'.format(y)
         s = s + 'z_acc: {}\n'.format(z)
