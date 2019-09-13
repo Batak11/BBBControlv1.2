@@ -1,4 +1,5 @@
 import numpy
+from time import sleep
 import sys
 import MPU
 import Adafruit_BBIO.PWM as PWM
@@ -36,6 +37,8 @@ for i in range(0, 10):
                 print(current_angle)
                 cut_output = calc_functions.output_cut(output)
                 PWM.set_duty_cycle(myPWM, cut_output)
+                sleep(0.1)
+                
             except OSError:
                 pass
 
