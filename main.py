@@ -14,7 +14,7 @@ IMU_static = MPU.MPU_9150(0, 0)
 IMU_dynamic = MPU.MPU_9150(0, 1)
 
 
-for i in range(0, 20):
+for i in range(0, 10):
     print("Do you want to change Gains? if yes press y: ")
     if input() == "y":
         new_Kp = float(input())
@@ -30,11 +30,9 @@ for i in range(0, 20):
             vec_dynamic = IMU_dynamic.get_acceleration()
             vec_static = IMU_static.get_acceleration()
             current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
-            PID_object.setSampleTime(10)
             output = PID_object.update(current_angle)
             cut_output = calc_functions.output_cut(output)
-            mapped_output = calc_functions.output_mapped(cut_output)
-            PWM.set_duty_cycle(myPWM, mapped_output)
+            PWM.set_duty_cycle(myPWM, cut_output)
 
     except KeyboardInterrupt:
         pass

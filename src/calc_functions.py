@@ -18,8 +18,8 @@ def reference_angle():
 
 
 def output_cut(output):
-    if output > 1:
-        output = 1
+    if output > 100:
+        output = 100
     elif output < 0:
         output = 0
     return output
