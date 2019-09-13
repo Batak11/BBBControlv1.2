@@ -8,7 +8,7 @@ Created on Tue Sep 10 15:27:34 2019
 
 
 def reference_angle():
-    ref_angle = int(input("What Reference Angle Would You like? "))
+    ref_angle = float(input("What Reference Angle Would You like? "))
     if ref_angle < 0:
         ref_angle = 0
     elif ref_angle > 180:
