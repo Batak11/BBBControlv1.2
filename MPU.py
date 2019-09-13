@@ -61,7 +61,7 @@ class MPU_9150(object):
 
 
 if __name__ == "__main__":
-    IMU = MPU_9150(0, 1)
+    IMU = MPU_9150(0, 0)
     while True:
         try:
             x, y, z = IMU.get_acceleration()
