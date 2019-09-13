@@ -9,7 +9,7 @@ import PID_Controller
 
 PID_object = PID_Controller.PID(0, 0, 0)
 myPWM = "P8_13"
-PWM.start(myPWM, 0, 100000)
+PWM.start(myPWM, 0)
 IMU_static = MPU.MPU_9150(0, 0)
 IMU_dynamic = MPU.MPU_9150(0, 1)
 
@@ -36,8 +36,6 @@ for i in range(0, 10):
                 cut_output = calc_functions.output_cut(output)
                 PWM.set_duty_cycle(myPWM, cut_output)
             except OSError:
-                pass
-            except TimeoutError:
                 pass
 
     except KeyboardInterrupt:
