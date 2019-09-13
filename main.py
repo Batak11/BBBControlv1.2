@@ -37,7 +37,7 @@ for i in range(0, 10):
                 print(current_angle)
                 cut_output = calc_functions.output_cut(output)
                 PWM.set_duty_cycle(myPWM, cut_output)
-                sleep(1)
+                sleep(0.5)
                 
             except OSError:
                 pass
