@@ -11,7 +11,7 @@ import PID as PIDlib
 
 
 #PID_object = PID_Controller.PID(0, 0, 0)
-PID = PIDlib.PidController([0.02, .5, 0.02], 0.1, 50)
+PID = PIDlib.PidController([0.02, .5, 0.02], 0.05, 50)
 
 
 myPWM = "P8_13"
@@ -53,7 +53,7 @@ for i in range(0, 10):
 #                print('output:\t\t', output)
                 print('output2:\t\t', output_2, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
-                sleep(.1)
+                sleep(.05)
 
             except OSError:
                 pass
