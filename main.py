@@ -27,7 +27,7 @@ for i in range(0, 10):
     ref_angle = calc_functions.reference_angle()
     DC = 28.266*np.log(ref_angle)-55.595
     PID_object.setSetPoint(ref_angle)
-    # PID_object.setWindup(20)
+    PID_object.setWindup(100)
     PID_object.setSampleTime(0.5)
     try:
         while True:
