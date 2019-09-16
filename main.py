@@ -1,5 +1,5 @@
 import numpy as np
-from time
+from time import sleep
 import sys
 import MPU
 import Adafruit_BBIO.PWM as PWM
@@ -53,7 +53,7 @@ for i in range(0, 10):
                 print('output:\t\t', output)
                 print('output2:\t\t', output_2, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
-                time.sleep(.2)
+                sleep(.2)
 
             except OSError:
                 pass
