@@ -7,8 +7,13 @@ sys.path.insert(1, './src')
 import IMU_calc
 import calc_functions
 import PID_Controller 
+import PID as PIDlib 
+
 
 PID_object = PID_Controller.PID(0, 0, 0)
+PID = PIDlib.PidController([0, 1, 0], 0.01, 99)
+
+
 myPWM = "P8_13"
 PWM.start(myPWM, 0)
 IMU_static = MPU.MPU_9150(0, 0)
@@ -27,7 +32,7 @@ for i in range(0, 10):
     ref_angle = calc_functions.reference_angle()
     DC = 28.266*np.log(ref_angle)-55.595
     PID_object.setSetPoint(ref_angle)
-    PID_object.setWindup(100)
+    PID_object.setWindup(20)
     PID_object.setSampleTime(0.5)
     try:
         while True:
@@ -36,11 +41,13 @@ for i in range(0, 10):
                 vec_static = IMU_static.get_acceleration()
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID_object.update(current_angle)
+                output_2 = PID.output(ref_angle, current_angle)
                 print('measured angle:\t', current_angle)
                 # cut_output = calc_functions.output_cut(output)
                 new_DC = DC+output
                 print('DC:\t\t', DC)
                 print('output:\t\t', output)
+                print('output2:\t\t', output_2)
                 PWM.set_duty_cycle(myPWM, new_DC)
 
             except OSError:
