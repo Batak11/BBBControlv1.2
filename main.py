@@ -44,10 +44,10 @@ for i in range(0, 10):
                 output_2 = PID.output(ref_angle, current_angle)
                 print('measured angle:\t', current_angle)
                 # cut_output = calc_functions.output_cut(output)
-                new_DC = DC+output
+                new_DC = DC+output_2
                 print('DC:\t\t', DC)
                 print('output:\t\t', output)
-                print('output2:\t\t', output_2)
+                print('output2:\t\t', output_2, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
 
             except OSError:
