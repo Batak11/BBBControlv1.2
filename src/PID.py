@@ -89,7 +89,7 @@ class PidController(object):
         self.integral = integ
 
         # Sum
-        controller_output = self.Kp*(err + diff) + integ
+        controller_output = self.Kp*(err) + diff + integ
 
         if np.abs(controller_output) > self.max_output:
             self.windup_guard = controller_output * \
