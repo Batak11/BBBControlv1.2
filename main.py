@@ -45,6 +45,10 @@ for i in range(0, 10):
                 print('measured angle:\t', current_angle)
                 # cut_output = calc_functions.output_cut(output)
                 new_DC = DC+output_2
+                if new_DC > 99:
+                    new_DC = 99
+                elif new_DC < .01:
+                    new_DC = .01
                 print('DC:\t\t', DC)
                 print('output:\t\t', output)
                 print('output2:\t\t', output_2, '\n')
