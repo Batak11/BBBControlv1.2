@@ -11,7 +11,7 @@ import PID as PIDlib
 
 
 #PID_object = PID_Controller.PID(0, 0, 0)
-PID = PIDlib.PidController([.5, 1, .5], 0.1, 200)
+PID = PIDlib.PidController([0, .1, .1], 0.1, 30)
 
 
 myPWM = "P8_13"
