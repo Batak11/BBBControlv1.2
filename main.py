@@ -10,8 +10,8 @@ import PID_Controller
 import PID as PIDlib 
 
 
-PID_object = PID_Controller.PID(0, 0, 0)
-PID = PIDlib.PidController([.05, 1, 0.002], 0.2, 200)
+#PID_object = PID_Controller.PID(0, 0, 0)
+PID = PIDlib.PidController([.09, 1, 0], 0.2, 200)
 
 
 myPWM = "P8_13"
