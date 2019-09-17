@@ -9,8 +9,8 @@ import calc_functions
 import PID_Controller 
 import PID as PIDlib 
 
-a = 1.463*10 ^ -9
-b = -8.223*10 ^ -7
+a = 1.463e-9
+b = -8.223e-7
 c = 0.0002
 d = -0.0252
 e = 2.1098
