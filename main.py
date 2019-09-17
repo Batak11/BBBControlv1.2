@@ -35,7 +35,7 @@ for i in range(0, 10):
 #        new_Kd = float(input())
 #        PID_object.setKd(new_Kd)
     ref_angle = calc_functions.reference_angle()
-    DC = a*ref_angle^5 + b*ref_angle^4 + c*ref_angle^3 + d*ref_angle^2 + e*ref_angle + f
+    DC = a*(ref_angle**5) + b*(ref_angle**4) + c*(ref_angle**3) + d*(ref_angle**2) + e*ref_angle + f
 #    PID_object.setSetPoint(ref_angle)
 #    PID_object.setWindup(20)
 #    PID_object.setSampleTime(0.5)
