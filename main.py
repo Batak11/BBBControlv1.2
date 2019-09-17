@@ -29,8 +29,8 @@ for i in range(0, 10):
 #        PID_object.setKi(new_Ki)
 #        new_Kd = float(input())
 #        PID_object.setKd(new_Kd)
-    ref_angle = calc_functions.reference_angle()
-    DC = 28.266*np.log(ref_angle)-55.595
+    DC = calc_functions.reference_angle()
+#    DC = 28.266*np.log(ref_angle)-55.595
 #    PID_object.setSetPoint(ref_angle)
 #    PID_object.setWindup(20)
 #    PID_object.setSampleTime(0.5)
@@ -52,7 +52,7 @@ for i in range(0, 10):
 #                print('DC:\t\t', DC)
 #                print('output:\t\t', output)
                 print('output2:\t\t', output_2, '\n')
-                PWM.set_duty_cycle(myPWM, new_DC)
+                PWM.set_duty_cycle(myPWM, DC)
                 sleep(.05)
 
             except OSError:
