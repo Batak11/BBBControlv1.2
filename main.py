@@ -14,7 +14,7 @@ b = -8.223e-7
 c = 0.0002
 d = -0.0252
 e = 2.1098
-f = -7.2276
+f = -9.2276
 # PID_object = PID_Controller.PID(0, 0, 0)
 PID = PIDlib.PidController([0.0, .5, 0.0], 0.05, 50)
 
