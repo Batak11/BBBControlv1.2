@@ -47,7 +47,7 @@ for i in range(0, 10):
 #                print('DC:\t\t', DC)
 #                print('output:\t\t', output)
                 print('output:\t\t', output, '\n')
-                PWM.set_duty_cycle(myPWM, new_DC)
+                PWM.set_duty_cycle(myPWM, DC)
                 sleep(.05)
 
             except OSError:
