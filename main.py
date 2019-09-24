@@ -17,7 +17,7 @@ e = 1.6974
 f = -3.2995
 
 
-PID = PIDlib.PidController([3.0, 1.0, 0.0], 0.05, 50)
+PID = PIDlib.PidController([.0, 2.0, 0.0], 0.05, 50)
 
 
 myPWM = "P8_13"
@@ -39,7 +39,7 @@ for i in range(0, 10):
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID.output(ref_angle, current_angle)
                 print('measured angle:\t', current_angle)
-                new_DC = DC   + output
+                new_DC = DC + output
                 if new_DC > 99:
                     new_DC = 99
                 elif new_DC < .01:
