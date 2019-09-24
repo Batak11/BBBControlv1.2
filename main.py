@@ -39,15 +39,15 @@ for i in range(0, 10):
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID.output(ref_angle, current_angle)
                 print('measured angle:\t', current_angle)
-                new_DC = DC  # +output
+                new_DC = DC   + output
                 if new_DC > 99:
                     new_DC = 99
                 elif new_DC < .01:
                     new_DC = .01
 #                print('DC:\t\t', DC)
 #                print('output:\t\t', output)
-                # print('output2:\t\t', output, '\n')
-                PWM.set_duty_cycle(myPWM, DC)
+                print('output:\t\t', output, '\n')
+                PWM.set_duty_cycle(myPWM, new_DC)
                 sleep(.05)
 
             except OSError:
