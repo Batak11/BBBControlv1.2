@@ -9,13 +9,13 @@ import calc_functions
 import PID_Controller 
 import PID as PIDlib 
 
-a = -3.607e-12
-b = 2.426e-9
-c = -6.82e-7
-d = 0.0001
-e = -0.172
-f = 1.7438
-g = -3.5151
+a = 2.566E-10
+b = -1.9E-7
+c = 7.095E-5
+d = -0.0147
+e = 1.6974
+f = -3.2995
+
 
 PID = PIDlib.PidController([0.0, 1.0, 0.0], 0.05, 50)
 
@@ -29,7 +29,7 @@ IMU_dynamic = MPU.MPU_9150(0, 1)
 for i in range(0, 10):
 
     ref_angle = calc_functions.reference_angle()
-    DC = a*(ref_angle**6) + b*(ref_angle**5) + c*(ref_angle**4) + d*(ref_angle**3) + e*(ref_angle**2) + f*ref_angle + g
+    DC = a*(ref_angle**5) + b*(ref_angle**4) + c*(ref_angle**3) + d*(ref_angle**2) + e*ref_angle + f
 
     try:
         while True:
@@ -39,14 +39,14 @@ for i in range(0, 10):
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID.output(ref_angle, current_angle)
                 print('measured angle:\t', current_angle)
-                new_DC = DC  # + output
+                new_DC = DC  # +output
                 if new_DC > 99:
                     new_DC = 99
                 elif new_DC < .01:
                     new_DC = .01
 #                print('DC:\t\t', DC)
 #                print('output:\t\t', output)
-                print('output:\t\t', output, '\n')
+                # print('output2:\t\t', output, '\n')
                 PWM.set_duty_cycle(myPWM, DC)
                 sleep(.05)
 
