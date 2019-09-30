@@ -1,4 +1,3 @@
-import numpy as np
 from time import sleep
 import sys
 import MPU
@@ -17,7 +16,7 @@ e = -19.343
 # f = -21.65
 
 
-PID = PIDlib.PidController([0., 0.1, 0], 0.01, 30)
+PID = PIDlib.PidController([0., 1, 0], 0.01, 30)
 
 
 myPWM = "P8_13"
