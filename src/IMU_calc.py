@@ -10,7 +10,7 @@ def calc_angle(vec1, vec2, rotate_angle=0., delta_out=False, jump=np.pi*.5):
     vec2 = rotate([x2, y2, 0], phi1+jump)
     phi2 = np.degrees(np.arctan2(vec2[1], vec2[0]) - jump)
 
-    alpha_IMU = phi2
+    alpha_IMU = -phi2
 
     if delta_out:
         z = np.mean([z1, z2])
