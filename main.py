@@ -9,12 +9,12 @@ import calc_functions
 import PID_Controller 
 import PID as PIDlib 
 
-a = -2.04*(10**-6)
+a = (-2.04)*(10**-6)
 b = 0.0006
 c = -0.0675
-d = +3.9591
+d = 3.9591
 e = 19.343
-#f = -21.65
+# f = -21.65
 
 
 PID = PIDlib.PidController([.0, 1, 0.0], 0.01, 30)
@@ -29,7 +29,7 @@ IMU_dynamic = MPU.MPU_9150(0, 1)
 for i in range(0, 10):
 
     ref_angle = calc_functions.reference_angle()
-    DC = a*(ref_angle**4) + b*(ref_angle**3) + c*(ref_angle**2) + d*ref_angle + e
+    DC = a * (ref_angle ** 4) + b * (ref_angle ** 3) + c * (ref_angle ** 2) + d * ref_angle + e
 
     try:
         while True:
