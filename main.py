@@ -17,7 +17,7 @@ e = -19.343
 # f = -21.65
 
 
-PID = PIDlib.PidController([0., 0.1, 0], 0.05, 30)
+PID = PIDlib.PidController([0., 0.1, 0], 0.01, 30)
 
 
 myPWM = "P8_13"
@@ -46,7 +46,7 @@ for i in range(0, 10):
                     new_DC = .01
 #                print('output:\t\t', output, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
-                sleep(.05)
+                sleep(.01)
 
             except OSError:
                 pass
