@@ -39,6 +39,7 @@ for i in range(0, 10):
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID.output(ref_angle, current_angle)
                 print('measured angle:\t', current_angle)
+                print(DC)
 #                new_DC = DC + output
 #                if new_DC > 99:
 #                    new_DC = 99
