@@ -38,8 +38,7 @@ for i in range(0, 10):
                 vec_static = IMU_static.get_acceleration()
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID.output(ref_angle, current_angle)
-                print('measured angle:\t', current_angle)
-                print(ref_angle)
+                print('measured angle:\t', current_angle, ref_angle)              
                 print(DC)
                 new_DC = DC + output
                 if new_DC > 99:
