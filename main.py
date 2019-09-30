@@ -41,13 +41,13 @@ for i in range(0, 10):
                 print('measured angle:\t', current_angle)
                 print(ref_angle)
                 print(DC)
-#                new_DC = DC + output
-#                if new_DC > 99:
-#                    new_DC = 99
-#                elif new_DC < .01:
-#                    new_DC = .01
+                new_DC = DC + output
+                if new_DC > 99:
+                    new_DC = 99
+                elif new_DC < .01:
+                    new_DC = .01
                 print('output:\t\t', output, '\n')
-                PWM.set_duty_cycle(myPWM, DC)
+                PWM.set_duty_cycle(myPWM, new_DC)
                 sleep(.01)
 
             except OSError:
