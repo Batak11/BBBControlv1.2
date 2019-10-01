@@ -1,4 +1,4 @@
-from time import sleep
+import time
 import sys
 import MPU
 import Adafruit_BBIO.PWM as PWM
@@ -37,7 +37,7 @@ for i in range(0, 10):
                 vec_static = IMU_static.get_acceleration()
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
                 output = PID.output(ref_angle, current_angle)
-                print('measured angle:\t', current_angle, ref_angle)
+                print('measured angle:\t',time.monotonic(), current_angle, ref_angle)
                 new_DC = DC + output
                 if new_DC > 99:
                     new_DC = 99
@@ -45,7 +45,7 @@ for i in range(0, 10):
                     new_DC = .01
                 print('output:\t\t', output, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
-                sleep(.01)
+                time.sleep(.01)
 
             except OSError:
                 pass
