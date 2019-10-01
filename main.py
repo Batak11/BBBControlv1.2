@@ -54,7 +54,7 @@ for i in range(0, 10):
                 elif new_DC < .01:
                     new_DC = .01
 #                print('output:\t\t', output, '\n')
-                PWM.set_duty_cycle(myPWM, DC)
+                PWM.set_duty_cycle(myPWM, new_DC)
                 time.sleep(.01)
 
             except OSError:
