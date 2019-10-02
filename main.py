@@ -31,7 +31,7 @@ e = -0.0469
 
 
 
-PID = PIDlib.PidController([0.1, 4.5, 0.08], 0.05, 30)
+PID = PIDlib.PidController([0.86, 4.5, 0.0], 0.05, 30)
 
 
 myPWM = "P8_13"
