@@ -7,7 +7,7 @@ import IMU_calc
 import calc_functions
 import PID_Controller 
 import PID as PIDlib 
-# Werte für 1 BAR
+# Werte für 1 BAR Großer Arm
 # a = -.00000204    
 # b = 0.0006
 # c = -0.0675
@@ -15,14 +15,14 @@ import PID as PIDlib
 # e = -19.343
 # f = -21.65
 
-#Werte für 2 Bar
+#Werte für 2 Bar Großer Arm
 a = -1.773E-7
 b = 7.232E-5
 c = -0.012
 d = 1.1541
 e = -0.0469
 
-#Were für 3 Bar
+#Were für 3 Bar Großer Arm
 # a = -8.526E-8
 # b = 4.14E-5
 # c = -0.0079
@@ -31,7 +31,7 @@ e = -0.0469
 
 
 
-PID = PIDlib.PidController([0.86, 4.5, 0.09], 0.01, 30)
+PID = PIDlib.PidController([0.86, 4.5, 0.09], 0.1, 30)
 
 
 myPWM = "P8_13"
@@ -61,7 +61,7 @@ for i in range(0, 10):
                     new_DC = .01
 #                print('output:\t\t', output, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
-                time.sleep(.01)
+                time.sleep(.1)
 
             except OSError:
                 pass
