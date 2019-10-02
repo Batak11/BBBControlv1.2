@@ -29,13 +29,18 @@ import PID as PIDlib
 # e = 1.0103
 
 #Werte für 1 Bar kleiner Arm
+a = -3.124E-7
+b = 9.904E-5
+c = -0.015
+d = 1.7829
+e = -5.9829
 
 #Werte für 2 Bar kleiner Arm
-a = -7.594E-7
-b = 0.0002
-c = -0.0235
-d = 1.4376
-e = -7.7863
+# a = -7.594E-7
+# b = 0.0002
+# c = -0.0235
+# d = 1.4376
+# e = -7.7863
 
 #Werte für 3 Bar kleiner Arm
 # a = -2.245E-7
@@ -44,7 +49,7 @@ e = -7.7863
 # d = 0.7632
 # e = -3.1327
 
-PID = PIDlib.PidController([0.86, 4.5, 0.09], 0.001, 30)
+PID = PIDlib.PidController([0.86, 4.5, 0.09], 0.1, 30)
 
 
 myPWM = "P8_13"
@@ -74,7 +79,7 @@ for i in range(0, 10):
                     new_DC = .01
 #                print('output:\t\t', output, '\n')
                 PWM.set_duty_cycle(myPWM, new_DC)
-                time.sleep(.001)
+                time.sleep(.1)
 
             except OSError:
                 pass
