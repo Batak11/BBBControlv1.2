@@ -69,9 +69,8 @@ for i in range(0, 10):
                 vec_dynamic = IMU_dynamic.get_acceleration()
                 vec_static = IMU_static.get_acceleration()
                 current_angle = IMU_calc.calc_angle(vec_dynamic, vec_static)
-                current_angle_rounded = round(current_angle, 2)
-                output = PID.output(ref_angle, current_angle_rounded)
-                print(time.monotonic(), current_angle_rounded, ref_angle)
+                output = PID.output(ref_angle, current_angle)
+                print(time.monotonic(), current_angle, ref_angle)
 #                print(current_angle)
                 new_DC = DC + output
                 if new_DC > 99.99:
