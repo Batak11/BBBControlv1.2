@@ -61,7 +61,7 @@ IMU_dynamic = MPU.MPU_9150(0, 1)
 for i in range(0, 10):
 
     ref_angle = calc_functions.reference_angle()
-    first_time = time.monotic()
+    first_time = time.monotonic()
     while time.monotonic() < (first_time + 1):
         vec_dynamic = IMU_dynamic.get_acceleration()
         vec_static = IMU_static.get_acceleration()
