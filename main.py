@@ -8,11 +8,11 @@ import calc_functions
 import PID_Controller 
 import PID as PIDlib 
 # Werte für 1 BAR Großer Arm
-# a = -.00000204    
-# b = 0.0006
-# c = -0.0675
-# d = 3.9591
-# e = -19.343
+a = -.00000204    
+b = 0.0006
+c = -0.0675
+d = 3.9591
+e = -19.343
 
 #Werte für 2 Bar Großer Arm
 #a = -1.773E-7
@@ -36,11 +36,11 @@ import PID as PIDlib
 #e = -5.9829
 
 #Werte für 2 Bar kleiner Arm
-a = -7.594E-7
-b = 0.0002
-c = -0.0235
-d = 1.4376
-e = -7.7863
+# a = -7.594E-7
+# b = 0.0002
+# c = -0.0235
+# d = 1.4376
+# e = -7.7863
 
 #Werte für 3 Bar kleiner Arm
 # a = -2.245E-7
