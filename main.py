@@ -71,7 +71,7 @@ for i in range(0, 10):
     DC = a * (ref_angle ** 4) + b * (ref_angle ** 3) + c * (ref_angle ** 2) + d * ref_angle + e
 
     try:
-        while True
+        while True:
             try:
                 vec_dynamic = IMU_dynamic.get_acceleration()
                 vec_static = IMU_static.get_acceleration()
