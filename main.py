@@ -8,11 +8,11 @@ import calc_functions
 import PID_Controller 
 import PID as PIDlib 
 # Werte für 1 BAR Großer Arm
-a = -.00000204    
-b = 0.0006
-c = -0.0675
-d = 3.9591
-e = -19.343
+#a = -.00000204    
+#b = 0.0006
+#c = -0.0675
+#d = 3.9591
+#e = -19.343
 
 #Werte für 2 Bar Großer Arm
 #a = -1.773E-7
@@ -22,11 +22,11 @@ e = -19.343
 #e = -0.0469
 
 #Were für 3 Bar Großer Arm
-# a = -8.526E-8
-# b = 4.14E-5
-# c = -0.0079
-# d = 0.7641
-# e = 1.0103
+a = -8.526E-8
+b = 4.14E-5
+c = -0.0079
+d = 0.7641
+e = 1.0103
 
 #Werte für 1 Bar kleiner Arm
 #a = -3.124E-7
@@ -49,7 +49,7 @@ e = -19.343
 # d = 0.7632
 # e = -3.1327
 
-PID = PIDlib.PidController([0.86, 4.5, 0.09], 0.01, 30)
+PID = PIDlib.PidController([0.1, 16.667, 0.0], 0.01, 30)
 
 
 myPWM = "P8_13"
