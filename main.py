@@ -15,18 +15,18 @@ import PID as PIDlib
 #e = -19.343
 
 #Werte für 2 Bar Großer Arm
-#a = -1.773E-7
-#b = 7.232E-5
-#c = -0.012
-#d = 1.1541
-#e = -0.0469
+a = -1.773E-7
+b = 7.232E-5
+c = -0.012
+d = 1.1541
+e = -0.0469
 
 #Were für 3 Bar Großer Arm
-a = -8.526E-8
-b = 4.14E-5
-c = -0.0079
-d = 0.7641
-e = 1.0103
+#a = -8.526E-8
+#b = 4.14E-5
+#c = -0.0079
+#d = 0.7641
+#e = 1.0103
 
 #Werte für 1 Bar kleiner Arm
 #a = -3.124E-7
