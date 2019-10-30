@@ -90,7 +90,7 @@ for i in range(0, 10):
 
             except OSError:
                 pass
-            PWM.set_duty_cycle(myPWM, 0)
+
     except KeyboardInterrupt:
         pass
 
